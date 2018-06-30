@@ -1,13 +1,13 @@
 <%@page import="io.amecodelabs.repository.DataRepository"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page import="io.amecodelabs.model.Person"  %>
 <%@ page import="io.amecodelabs.repository.DataRepository"  %>
+<%@ page import="java.util.List"  %>
 
-<%!
-	Person person = Person.createPersonDefault();
-	DataRepository data = DataRepository.getRepository();
-%>
+<%!Person person = Person.createPersonDefault();%>
 
 <!DOCTYPE html>
 <html>
@@ -16,13 +16,15 @@
 <title>WonderFul</title>
 </head>
 <body>
-	<%= data %>
+	
+	<p>${applicationScope.dataRepository}</p>
 	<h1>Welcome to WonderFul</h1>
 	<p><%= person.getNames() + " | " + person.getLastNames()  %></p>
+	<% List<String> data = ((DataRepository) application.getAttribute("dataRepository")).getData(); %>
 	<ul>
-	<% for(String valueCurrent: data.getData()) {%>
-		<li><%= valueCurrent %></li>
-	<% } %>
+		<c:forEach var = "i" items = "${applicationScope.dataRepository.getData()}">
+			<li> <c:out value = "${i}"/> </li>
+     	</c:forEach>
 	</ul>
 
 </body>

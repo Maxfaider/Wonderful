@@ -1,7 +1,6 @@
 package io.amecodelabs.model;
 
 public class Person {
-	
 	private String names;
 	private String lastNames;
 	
@@ -18,7 +17,6 @@ public class Person {
 		this.lastNames = lastNames;
 	}
 	
-
 	public String getNames() {
 		return names;
 	}
