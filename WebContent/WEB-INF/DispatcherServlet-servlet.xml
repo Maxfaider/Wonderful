@@ -14,5 +14,7 @@
       <property name = "prefix" value = "/app/public/" />
       <property name = "suffix" value = ".jsp" />
    </bean>
-
+   
+   <bean name = "/data/*" class = "io.amecodelabs.controller.DataController"/>
+   <bean name = "/soap/*" class = "io.amecodelabs.controller.SoapController"></bean>
 </beans>

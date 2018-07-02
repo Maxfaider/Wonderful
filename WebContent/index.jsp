@@ -19,6 +19,7 @@
 	
 	<p>${applicationScope.dataRepository}</p>
 	<h1>Welcome to WonderFul</h1>
+	<p><%= request.getRequestURL() %></p>
 	<p><%= person.getNames() + " | " + person.getLastNames()  %></p>
 	<% List<String> data = ((DataRepository) application.getAttribute("dataRepository")).getData(); %>
 	<ul>
@@ -26,6 +27,8 @@
 			<li> <c:out value = "${i}"/> </li>
      	</c:forEach>
 	</ul>
+	
+	<img alt="fondo" src="spring/resources/luna.jpg">
 
 </body>
 </html>

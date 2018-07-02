@@ -8,5 +8,9 @@
 </head>
 <body>
 	<h1>Welcome to: ${web}</h1>
+	<p><%= request.getRequestURI() %></p>
+	<p><%= application.getResource("/app/public/img/lanscapeLuna.jpg") %></p>
+	<p><%= application.getRealPath("/app/public/img/lanscapeLuna.jpg") %></p>
+	<img alt="fondo" src="resources/luna.jpg">
 </body>
 </html>
